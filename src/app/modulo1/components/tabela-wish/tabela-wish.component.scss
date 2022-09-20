@@ -1,0 +1,21 @@
+.but{
+  margin-right: 10px;
+}
+.but2{
+  border-color: green;
+  background-color: green ;
+}
+#floatButton{
+  float: right;
+  position:fixed;
+  z-index:0;
+  bottom: 75px;
+  right:20px;
+  width: 70px;
+  height: 65px;
+  
+}
+.div{
+  position: relative;
+  overflow: visible;
+}
