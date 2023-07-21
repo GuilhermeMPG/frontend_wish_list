@@ -6,8 +6,12 @@ import {DialogModule} from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+import {InputTextModule} from 'primeng/inputtext';
+import {InputTextareaModule} from 'primeng/inputtextarea';
+import {InputNumberModule} from 'primeng/inputnumber';
+import {SliderModule} from 'primeng/slider';
 
-const MODULES = [CommonModule,TableModule,ProgressBarModule,DialogModule,ButtonModule,BrowserAnimationsModule,BrowserModule ]
+const MODULES = [CommonModule,TableModule,ProgressBarModule,DialogModule,ButtonModule,BrowserAnimationsModule,BrowserModule,InputTextModule,InputTextareaModule,InputNumberModule,SliderModule ]
 
 @NgModule({
   imports: [MODULES],

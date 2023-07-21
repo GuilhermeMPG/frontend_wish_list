@@ -1,5 +1,6 @@
 .but{
   margin-right: 10px;
+
 }
 .but2{
   border-color: green;
@@ -8,14 +9,31 @@
 #floatButton{
   float: right;
   position:fixed;
-  z-index:0;
   bottom: 75px;
   right:20px;
   width: 70px;
   height: 65px;
-  
+
 }
 .div{
   position: relative;
   overflow: visible;
 }
+
+
+
+@media (max-width:767px){
+  .classDescricao{
+
+    display: none;
+  }
+
+}
+@media (max-width:413px){
+
+  .but{
+
+    margin-bottom: 10px;
+  }
+}
+

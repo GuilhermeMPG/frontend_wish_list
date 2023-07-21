@@ -1,5 +1,5 @@
 export interface  itens_List{
-position?: number;
+id?: number;
 product: string;
 description: string;
 price: number;

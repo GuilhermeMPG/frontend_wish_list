@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {ButtonModule} from 'primeng/button';
 import {CardModule} from 'primeng/card';
@@ -10,9 +10,12 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { TabelaWishComponent } from './modulo1/components/tabela-wish/tabela-wish.component';
 import { PrimeNGModuleModule } from './core/prime-ngmodule/prime-ngmodule.module'
 import { HttpClientModule } from '@angular/common/http';
-import { DialogChangeComponent } from './shared/componets/dialog-change/dialog-change.component';
-
-
+import { DialogChangeComponent } from './shared/components/dialog-change/dialog-change.component';
+import {FormsModule} from '@angular/forms';
+import localePt from '@angular/common/locales/pt'
+import {registerLocaleData} from '@angular/common';
+import { NgScrollbarModule } from 'ngx-scrollbar';
+registerLocaleData(localePt);
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,9 +31,15 @@ import { DialogChangeComponent } from './shared/componets/dialog-change/dialog-c
     CardModule,
     PrimeNGModuleModule,
     HttpClientModule,
-    
+    FormsModule,
+    NgScrollbarModule
+
   ],
-  providers: [],
+  providers: [{
+    provide: LOCALE_ID,
+    useValue: 'pt-BR'
+  }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
