@@ -4,8 +4,8 @@ import { ItensListService } from 'src/app/shared/services/itens-list.service';
 
 @Component({
   selector: 'app-tabela-wish',
-  templateUrl: './tabela-wish.component.html',
-  styleUrls: ['./tabela-wish.component.scss'],
+  templateUrl: 'tabela-wish.component.html',
+  styleUrls: ['tabela-wish.component.scss'],
 })
 export class TabelaWishComponent implements OnInit, OnChanges {
 

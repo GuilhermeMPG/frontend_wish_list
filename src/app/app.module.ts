@@ -5,10 +5,10 @@ import {CardModule} from 'primeng/card';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './shared/components/header/header.component';
-import { FooterComponent } from './shared/components/footer/footer.component';
-import { TabelaWishComponent } from './modulo1/components/tabela-wish/tabela-wish.component';
-import { PrimeNGModuleModule } from './core/prime-ngmodule/prime-ngmodule.module'
+import { HeaderComponent } from './core/components/header/header.component';
+import { FooterComponent } from './core/components/footer/footer.component';
+import { TabelaWishComponent } from './pages/components/tabela-wish/tabela-wish.component';
+import { PrimeNGModuleModule } from './core/prime-ngmodule.module'
 import { HttpClientModule } from '@angular/common/http';
 import { DialogChangeComponent } from './shared/components/dialog-change/dialog-change.component';
 import {FormsModule} from '@angular/forms';
