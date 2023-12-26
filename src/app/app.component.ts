@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
@@ -6,6 +6,23 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+
+
+
+export class AppComponent implements OnInit {
+
   title = 'wish_list';
+  visible : boolean = false;
+
+  width: number = window.innerWidth;
+
+  ngOnInit() {
+    window.addEventListener('resize', this.onResize);
+  }
+
+  onResize() {
+    this.width = window.innerWidth;
+
+  }
+
 }

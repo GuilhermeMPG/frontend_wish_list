@@ -1,4 +1,24 @@
-<app-header></app-header>
-<app-tabela-wish></app-tabela-wish>
+<app-header (visibleChange)="visible = !visible"></app-header>
+<div style="display: flex; position: relative">
+  <app-sidebar
+    style="position: absolute; transition: left 0.3s ease; align-items: center"
+    [ngStyle]="{ 'left.px': visible ? 0 : -300 }"
+  ></app-sidebar>
+  <div class="container" [ngStyle]="{ 'margin-left.px': visible && width>800? 320 : 0 }">
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <!-- <router-outlet
+    class=".wish-list"
+    style="width: -webkit-fill-available"
+    [ngStyle]="{ 'margin-left.px': visible && width>800? 320 : 0 }"
+  ></router-outlet> -->
+  <!-- <app-tabela-wish
+    class=".wish-list"
+    style="width: -webkit-fill-available;"
+    [ngStyle]="{ 'margin-left.px': visible ? 320 : 0 }"
+  ></app-tabela-wish> -->
+</div>
+
 <app-footer class="footer"></app-footer>
-<router-outlet></router-outlet>

@@ -10,8 +10,9 @@ import {InputTextModule} from 'primeng/inputtext';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {InputNumberModule} from 'primeng/inputnumber';
 import {SliderModule} from 'primeng/slider';
+import {SidebarModule} from 'primeng/sidebar';
 
-const MODULES = [CommonModule,TableModule,ProgressBarModule,DialogModule,ButtonModule,BrowserAnimationsModule,BrowserModule,InputTextModule,InputTextareaModule,InputNumberModule,SliderModule ]
+const MODULES = [CommonModule,TableModule,ProgressBarModule,DialogModule,ButtonModule,BrowserAnimationsModule,BrowserModule,InputTextModule,InputTextareaModule,InputNumberModule,SliderModule,SidebarModule ]
 
 @NgModule({
   imports: [MODULES],

@@ -15,6 +15,7 @@ import {FormsModule} from '@angular/forms';
 import localePt from '@angular/common/locales/pt'
 import {registerLocaleData} from '@angular/common';
 import { NgScrollbarModule } from 'ngx-scrollbar';
+import { SidebarComponent } from './core/components/sidebar/sidebar.component';
 registerLocaleData(localePt);
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ registerLocaleData(localePt);
     HeaderComponent,
     FooterComponent,
     TabelaWishComponent,
-    DialogChangeComponent
+    DialogChangeComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
