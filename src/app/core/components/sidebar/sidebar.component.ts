@@ -1,3 +1,4 @@
+import { Router, Routes } from '@angular/router';
 import {
   Component,
   EventEmitter,
@@ -14,7 +15,7 @@ import {
   styleUrls: ['sidebar.component.scss'],
 })
 export class SidebarComponent implements OnInit, OnChanges {
-  constructor() {}
+  constructor( private router:Router) {}
 
   @Input() public visible: boolean = false;
   @Output() public visibleChange = new EventEmitter();
@@ -26,10 +27,15 @@ export class SidebarComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.hasOwnProperty('visible')) {
       const newValue = changes['visible'].currentValue;
-      console.log(newValue);
       this.showSidebar = newValue;
       this.sidebarVisible = this.showSidebar;
       this.tableMarginLeft = this.sidebarVisible ? 8000 : 0;
     }
   }
+
+  navigator(url:string){
+    this.router.navigate([`/${url}`]);
+  }
+
+
 }

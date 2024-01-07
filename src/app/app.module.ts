@@ -11,11 +11,13 @@ import { TabelaWishComponent } from './pages/components/tabela-wish/tabela-wish.
 import { PrimeNGModuleModule } from './core/prime-ngmodule.module'
 import { HttpClientModule } from '@angular/common/http';
 import { DialogChangeComponent } from './shared/components/dialog-change/dialog-change.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import localePt from '@angular/common/locales/pt'
 import {registerLocaleData} from '@angular/common';
 import { NgScrollbarModule } from 'ngx-scrollbar';
 import { SidebarComponent } from './core/components/sidebar/sidebar.component';
+import { HomeComponent } from './pages/components/home/home.component';
+import { SigninComponent } from './auth/components/signin/signin.component';
 registerLocaleData(localePt);
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ registerLocaleData(localePt);
     FooterComponent,
     TabelaWishComponent,
     DialogChangeComponent,
-    SidebarComponent
+    SidebarComponent,
+    HomeComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,9 @@ registerLocaleData(localePt);
     PrimeNGModuleModule,
     HttpClientModule,
     FormsModule,
-    NgScrollbarModule
+    NgScrollbarModule,
+    ReactiveFormsModule
+
 
   ],
   providers: [{

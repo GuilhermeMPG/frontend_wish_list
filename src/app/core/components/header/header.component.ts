@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -9,8 +9,8 @@ export class HeaderComponent implements OnInit {
   visible : boolean = false;
 
   constructor() { }
-  @Output() visibleChange = new EventEmitter();;
-
+  @Output() visibleChange = new EventEmitter();
+  @Input()  exibirOpcoes : boolean = true;
   ngOnInit(): void {
   }
   func(){

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 
 @Component({
@@ -13,8 +14,18 @@ export class AppComponent implements OnInit {
 
   title = 'wish_list';
   visible : boolean = false;
-
+  mostrarOpcaoHeader: boolean = true;
   width: number = window.innerWidth;
+  constructor(private router: Router) {
+    // Observa mudanças na navegação
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        // Verifica se a URL é '/login'
+        this.mostrarOpcaoHeader = event.url !== '/signin';
+      }
+    });
+  }
+
 
   ngOnInit() {
     window.addEventListener('resize', this.onResize);

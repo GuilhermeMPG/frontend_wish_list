@@ -11,12 +11,15 @@
       <h3>WishList</h3>
     </a>
     <button
+      *ngIf="exibirOpcoes"
+      style="color: black ; border-color: black;"
       pButton
       pRipple
       type="button"
       icon="pi pi-align-justify"
       class="p-button-secondary p-button-text"
       (click)="visibleChange.emit()"
+
     ></button>
   </div>
 </nav>

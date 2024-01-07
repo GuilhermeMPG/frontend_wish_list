@@ -1,3 +1,9 @@
+$cor-fundo-padrao: transparent;
+$cor-fundo-hover: rgb(20, 95, 27);
+$cor-fundo-ativo: rgb(11, 63, 9);
+$cor-texto: white;
+$cor-texto-hover: rgba(20, 20, 20, 0.795);
+
 a {
   padding-right: 10px;
 }
@@ -5,56 +11,60 @@ h3 {
   margin-left: 20px;
 }
 
-// .layout-config-sidebar {
-//   &.p-sidebar {
-//       .p-sidebar-content {
-//           padding-left: 2rem;
-//           padding-right: 2rem;
-//       }
-//   }
-// }
-// .layout-sidebar {
-//   position: none;
-//   width: 300px;
-//   height: calc(100vh - 9rem);
-//   z-index: 999;
-//   overflow-y: auto;
-//   user-select: none;
-//   top: 7rem;
-//   left: 2rem;
-
-//   background-color: var(--surface-overlay);
-
-//   padding: 0.5rem 1.5rem;
-//   box-shadow: 0px 3px 5px rgba(0, 0, 0, .02), 0px 0px 2px rgba(0, 0, 0, .05), 0px 1px 4px rgba(0, 0, 0, .08);
-// }
-div {
+.sidebar {
   display: flex;
-  overflow: hidden;
-  background-color: green;
-  .sidebar {
-    border-radius: 10px;
-    width: 300px;
-    min-height: 80px;
-    border: 1px solid #ccc;
-    position: absolute;
-    left: -300px; /* Inicialmente, a sidebar estará escondida fora da tela */
-    transition: left 0.3s ease;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: rgb(53, 53, 53);
+  height: 91vh;
+  opacity: 0.95;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-top: 1px;
+  margin-right: 5px;
+  align-items: center;
 
-    // left: 0;
-    // transform: translateX(
-    //   -100%
-    // ); /* Inicialmente, a sidebar estará escondida fora da tela */
-    // transition: transform 0.3s ease; /* Adiciona uma transição suave para o movimento lateral */
-  }
-  .sidebar.show {
-    /* Ao adicionar a classe "show", a sidebar se move para a posição inicial */
-    transform: translateX(0);
-    opacity: 1;
-  }
-  .wish-list {
-    transition: transform 0.3s ease;
-    // transition: margin-left 0.3s ease;
-    width: -webkit-fill-available;
-  }
 }
+
+.opcao{
+  margin: 15px;
+
+}
+
+.button {
+  background-color: $cor-fundo-padrao;
+  color: $cor-texto;
+  /* padding: 10px 20px; */
+  border: 3px inset #2a572a;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  width: 180px;
+  height: 50px;
+  font-weight: 500;
+  &:hover {
+    background-color: $cor-fundo-hover;
+    color: $cor-texto-hover;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px);
+  }
+
+
+}
+
+#hr{
+    border: 3px double white;
+    width: 100%;
+    justify-self: flex-end;
+}
+
+.div_opcao{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+
+}
+
