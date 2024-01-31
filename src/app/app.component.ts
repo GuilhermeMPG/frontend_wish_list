@@ -21,7 +21,13 @@ export class AppComponent implements OnInit {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         // Verifica se a URL é '/login'
-        this.mostrarOpcaoHeader = event.url !== '/signin';
+        if(event.url == '/signin' || event.url == '/signup'){
+        this.mostrarOpcaoHeader = false;
+
+      }else{
+        this.mostrarOpcaoHeader = true;
+      }
+
       }
     });
   }

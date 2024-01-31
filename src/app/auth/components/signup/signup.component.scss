@@ -11,8 +11,8 @@ main {
   justify-content: center;
   align-items: center;
 
-  height: 50vh;
   width: 50vh;
+  height: 50vh;
   border-style: solid;
   border-radius: 10px;
   flex-direction: column;
@@ -46,6 +46,10 @@ p {
   flex-direction: row;
   justify-content: space-between;
 }
+// .inBox {
+//   margin-bottom: 20px; /* Ajuste conforme necessário */
+// }
+
 .toggle-button {
   position: absolute;
   top: 50%;
@@ -56,4 +60,16 @@ p {
 
 input {
   width: 300px;
+}
+@media (max-width: 768px) {
+  input {
+    width: auto;
+  }
+
+  .box {
+    width: auto;
+    height: auto;
+    min-height: 50vh;
+    min-width: 50vw;
+  }
 }

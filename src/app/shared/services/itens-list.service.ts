@@ -1,30 +1,29 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { itens_List } from '../models/itens_lista.model';
+import { itens_List, itens_List_back } from '../models/itens_lista.model';
 @Injectable({
   providedIn: 'root',
 })
 export class ItensListService {
-  baseURL = 'http://localhost:3001/itens_Lista';
+  baseURL = 'item_desejo';
 
   constructor(private http: HttpClient) {}
 
-  getAll(): Observable<itens_List[]> {
-    return this.http.get<itens_List[]>(this.baseURL);
+  getAll(): Observable<itens_List_back[]> {
+    return this.http.get<itens_List_back[]>(this.baseURL);
   }
-  getItem(id:number):Observable<itens_List>{
-    return this.http.get<itens_List>(`${this.baseURL}/${id}`)
+  getItem(id: number): Observable<itens_List_back> {
+    return this.http.get<itens_List_back>(`${this.baseURL}/${id}`);
   }
-  postIten(item: itens_List): Observable<itens_List> {
-    return this.http.post<itens_List>(this.baseURL, item);
+  postIten(item: itens_List_back): Observable<itens_List_back> {
+    return this.http.post<itens_List_back>(this.baseURL, item);
   }
-  deletIten(id:number):Observable<itens_List>{
-    return this.http.delete<itens_List>(`${this.baseURL}/${id}`)
+  deletIten(id: number): Observable<itens_List_back> {
+    return this.http.delete<itens_List_back>(`${this.baseURL}/${id}`);
   }
 
-  update(item:itens_List): Observable<itens_List>{
-    return this.http.put<itens_List>(`${this.baseURL}/${item.id}`,item)
-
+  update(item: itens_List_back): Observable<itens_List_back> {
+    return this.http.patch<itens_List_back>(`${this.baseURL}/${item.id}`, item);
   }
 }

@@ -13,7 +13,7 @@
   <div class="grid p-fluid m-5">
     <div class="col-10  mb-4">
       <h5>Produto</h5>
-      <input type="text" pInputText [(ngModel)]="newProduct.product" name="produto"/>
+      <input type="text" pInputText [(ngModel)]="newProduct.nome" name="produto"/>
     </div>
 
     <div class="col-10 ">
@@ -23,7 +23,7 @@
           rows="5"
           cols="30"
           pInputTextarea
-          [(ngModel)]="newProduct.description"
+          [(ngModel)]="newProduct.descricao"
         name="descricao"></textarea>
       </div>
     </div>
@@ -31,7 +31,7 @@
     <div class="field col-10 ">
       <h5 for="currency-us">Preço</h5>
       <p-inputNumber
-        [(ngModel)]="newProduct.price"
+        [(ngModel)]="newProduct.preco"
         mode="currency"
         currency="BRL"
         locale="en-US"
@@ -44,8 +44,8 @@
   <div class="col-10 ">
     <h5>Prioridade</h5>
 
-    <p-slider [(ngModel)]="newProduct.priority" name="prioridade"></p-slider>
-    <span for=""> {{newProduct.priority}}</span>
+    <p-slider [(ngModel)]="newProduct.prioridade" name="prioridade"></p-slider>
+    <span for=""> {{newProduct.prioridade}}</span>
 
 </div>
 </div>

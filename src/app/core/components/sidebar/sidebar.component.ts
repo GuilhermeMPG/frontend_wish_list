@@ -1,3 +1,4 @@
+import { AuthService } from './../../../auth/service/auth.service';
 import { Router, Routes } from '@angular/router';
 import {
   Component,
@@ -15,7 +16,7 @@ import {
   styleUrls: ['sidebar.component.scss'],
 })
 export class SidebarComponent implements OnInit, OnChanges {
-  constructor( private router:Router) {}
+  constructor(private router: Router, private authService: AuthService) {}
 
   @Input() public visible: boolean = false;
   @Output() public visibleChange = new EventEmitter();
@@ -33,9 +34,15 @@ export class SidebarComponent implements OnInit, OnChanges {
     }
   }
 
-  navigator(url:string){
-    this.router.navigate([`/${url}`]);
+  sair() {
+    this.authService.logout();
+    this.navigator('signin');
   }
 
-
+  navigator(url: string) {
+    this.showSidebar = false;
+    this.sidebarVisible= false;
+    this.visibleChange.emit(this.showSidebar);
+    this.router.navigate([`/${url}`]);
+  }
 }

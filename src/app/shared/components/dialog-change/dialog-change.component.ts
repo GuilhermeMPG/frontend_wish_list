@@ -1,5 +1,5 @@
 import { ItensListService } from 'src/app/shared/services/itens-list.service';
-import { itens_List } from 'src/app/shared/models/itens_lista.model';
+import { itens_List, itens_List_back } from 'src/app/shared/models/itens_lista.model';
 import {
   Component,
   EventEmitter,
@@ -16,11 +16,13 @@ import {
   styleUrls: ['./dialog-change.component.scss'],
 })
 export class DialogChangeComponent implements OnInit, OnChanges {
-  newProduct: itens_List = {
-    product: 'produto',
-    description: 'descriçao',
-    price: 10,
-    priority: 10,
+  newProduct: itens_List_back = {
+    nome:'produto',
+    descricao: 'descriçao',
+    prioridade: 10,
+    preco:10,
+    adquirido: false
+
   };
   header: string = '';
 
@@ -36,19 +38,19 @@ export class DialogChangeComponent implements OnInit, OnChanges {
   ngOnChanges(): void {
     if (this.novo == true) {
       this.header = 'Adicionar Item';
-      this.newProduct.product = ""
-      this.newProduct.price = 0;
-      this.newProduct.description = "";
-      this.newProduct.priority = 0;
+      this.newProduct.nome = ""
+      this.newProduct.preco = 0;
+      this.newProduct.descricao = "";
+      this.newProduct.prioridade = 0;
 
     }
     if (this.novo == false) {
       this.header = 'Editar Item';
       this.itensListService.getItem(this.editId).subscribe((item) => {
-        this.newProduct.product = item.product;
-        this.newProduct.price = item.price;
-        this.newProduct.description = item.description;
-        this.newProduct.priority = item.priority;
+        this.newProduct.nome = item.nome;
+        this.newProduct.preco = item.preco;
+        this.newProduct.descricao = item.descricao;
+        this.newProduct.prioridade = item.prioridade;
         this.newProduct.id = item.id;
       });
     }
